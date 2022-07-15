@@ -3,10 +3,10 @@ $(document).ready(function(){
     // alert('withdraw');
     disable_balance_field();
     // get_balance();
-    calculateBalance();
+    // calculateBalance();
     submit_button();
-    $( "#id_amount" ).change(function() {
-        // alert( "Handler for .change() called." );
+    $( "#id_amount" ).keydown(function() {
+        alert( "Handler for .change() called." );
       });
     
 });
@@ -23,7 +23,7 @@ function submit_button(){
 
 
 function calculateBalance(){
-    $('#id_amount').change(function(){
+    $('#id_amount').keydown(function(){
         var id = $('#id_client').children("option:selected").val();
         var balance  = get_balance(id);
         var amount = $('#id_amount').val();
