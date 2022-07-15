@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="midde_cont">
+   <div class="container-fluid">
+      <div class="row column_title">
+         <div class="col-md-12">
+            <div class="page_title">
+               <h2> Transaction </h2>
+               
+            </div>
+         </div>
+      </div>
+      <div class="row column1">
+         <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+               <a href="{% url 'transactions:deposit' %}" class="btn btn-primary text-white">  <i
+                     class="fas fa-2x fa-folder-plus"></i> Deposit </a>
+
+               <a href="{% url 'transactions:withdraw' %}" class="btn btn-warning text-white">  <i
+                  class="fas fa-2x fa-folder-plus"></i> withdraw </a>
+
+               <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                     <h2> All Records </h2>
+                  </div>
+               </div>
+               <div class="table_section padding_infor_info">
+                  <div class="table-responsive-sm">
+                     <table class="table table-bordered">
+                        <thead>
+                           <tr>
+                              <th># </th>
+                              <th> Date </th>
+                              <th> Name </th>
+                              <th> Mode </th>
+                              <th> Currency </th>
+                              <th> Amount </th>
+                              <th> Reason </th>
+                              <th> Balance </th>
+                              <th> Company </th>
+                              <th> Description </th> 
+                              <th> Action </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for obj in object_list %}
+                           <tr>
+                              <td> {{ forloop.counter }} </td>
+                              <td> {{ obj.created_at }} </td>
+                              <td> {{ obj.client.last_name }} </td>
+                              <td> {{ obj.mode }} </td>
+                              <td> {{ obj.client.currency }} </td>
+                              <td> {{ obj.amount|intcomma }} </td>
+                              <td> {{ obj.reason }} </td>
+                              <td> {{ obj.balance|intcomma }} </td>
+                              <td> {{ obj.client.company }} </td>
+                              <td> {{ obj.description }} </td>
+                              <td>
+                                 <a class="btn btn-danger" href=""> edit </a>
+                              </td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- graph -->
+
+      <!-- end graph -->
+
+
+   </div>
+   <!-- footer -->
+
+</div>
+{% endblock content %}

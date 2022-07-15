@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+<div class="midde_cont">
+    <div class="container-fluid">
+       <div class="row column_title">
+          <div class="col-md-12">
+             <div class="page_title">
+                <h2>Dashboard</h2>
+             </div>
+          </div>
+       </div>
+       <div class="row column1">
+          <div class="col-md-6 col-lg-3">
+             <div class="full counter_section margin_bottom_30">
+                <div class="couter_icon">
+                   <div> 
+                      <i class="fa fa-user yellow_color"></i>
+                   </div>
+                </div>
+                <div class="counter_no">
+                   <div>
+                      <p class="total_no"> {{ clients|intcomma }}  </p>
+                      <p class="head_couter"> Clients </p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+             <div class="full counter_section margin_bottom_30">
+                <div class="couter_icon">
+                   <div> 
+                      <i class="fa fa-money-bills blue1_color"></i>
+                   </div>
+                </div>
+                <div class="counter_no">
+                   <div>
+                      <p class="total_no"> {{ cash|intcomma }} </p>
+                      <p class="head_couter"> Cash </p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+             <div class="full counter_section margin_bottom_30">
+                <div class="couter_icon">
+                   <div> 
+                      <i class="fa fa-cloud-download green_color"></i>
+                   </div>
+                </div>
+                <div class="counter_no">
+                   <div>
+                      <p class="total_no"> {{ cash }} </p>
+                      <p class="head_couter"> Cash </p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+             <div class="full counter_section margin_bottom_30">
+                <div class="couter_icon">
+                   <div> 
+                      <i class="fa fa-comments-o red_color"></i>
+                   </div>
+                </div>
+                <div class="counter_no">
+                   <div>
+                      <p class="total_no">54</p>
+                      <p class="head_couter"> Parents </p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- graph -->
+       
+       <!-- end graph -->
+       
+       
+    </div>
+    <!-- footer -->
+    <div class="container-fluid">
+       <div class="footer">
+          <p>Copyright © 2022 Designed by Mohacodes |  All rights reserved.<br><br>
+             Distributed By: <a href="https://themewagon.com/"> Mohacodes </a>
+          </p>
+       </div>
+    </div>
+</div>
+{% endblock content %}

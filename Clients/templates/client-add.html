@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="midde_cont">
+    <div class="container-fluid">
+       <div class="row column_title">
+          <div class="col-md-12">
+             <div class="page_title">
+                <h2> Clients </h2>
+             </div>
+          </div>
+       </div>
+       <div class="row column1">
+        <div class="col-md-12">
+          <div class="white_shd full margin_bottom_30">
+            
+
+             <div class="full graph_head">
+                <div class="heading1 margin_0">
+                   <h2> New Entry </h2>
+                </div>
+             </div>
+             <div class="full inner_elements p-4">
+                <div class="row">
+                  <div class="col-md-12">
+                    <form id="student_add_form" method="POST">
+                      {% csrf_token %}
+                      
+                      <div class="form-group">
+                        <div class="row">
+                            {% for field in form %}
+                            <div class="col-md-6">
+                              {{ field.label }}
+                              {{ field }}
+                              {{ field.errors }}
+          
+                            </div>
+                            {% endfor %}
+                          </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary"> Save </button>
+                  </form>
+                  </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       </div>
+       <!-- graph -->
+       
+       <!-- end graph -->
+       
+       
+    </div>
+    <!-- footer -->
+    
+ </div>
+{% endblock content %}

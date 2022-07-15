@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+
+<div class="midde_cont">
+   <div class="container-fluid">
+      <div class="row column_title">
+         <div class="col-md-12">
+            <div class="page_title">
+               <h2> Parents </h2>
+               
+            </div>
+         </div>
+      </div>
+      <div class="row column1">
+         <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+               <a href="{% url 'clients:add' %}" class="btn btn-dark text-white"> New <i
+                     class="fas fa-2x fa-folder-plus"></i> </a>
+
+               <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                     <h2> All Records </h2>
+                  </div>
+               </div>
+               <div class="table_section padding_infor_info">
+                  <div class="table-responsive-sm">
+                     
+                     <table class="table table-bordered">
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th> First Name </th>
+                              <th> Last Name </th>
+                              <th> Email </th>
+                              <th> Address </th>
+                              <th> Telephone </th>
+                              <th> Company </th>
+                              <th> Dollar </th>
+                              <th> Amount </th> 
+                              <th> Action </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for obj in object_list %}
+                           <tr>
+                              <td> {{ forloop.counter }} </td>
+                              <td> {{ obj.first_name }} </td>
+                              <td> {{ obj.last_name }} </td>
+                              <td> {{ obj.email }} </td>
+                              <td> {{ obj.address }} </td>
+                              <td> {{ obj.telephone }} </td>
+                              <td> {{ obj.company }} </td>
+                              <td> {{ obj.currency }} </td>
+                              <td> {{ obj.amount|intcomma }} </td>
+                              <td>
+                                 <a class="btn btn-danger" href=""> edit </a>
+                              </td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- graph -->
+
+      <!-- end graph -->
+
+
+   </div>
+   <!-- footer -->
+
+</div>
+{% endblock content %}
